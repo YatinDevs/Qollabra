@@ -4,7 +4,7 @@ const fs = require("fs");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors"); // consume cors similar to middle ware
-
+const path = require("path");
 // server creation
 const server = express();
 
@@ -23,10 +23,13 @@ const userRouter = require("./routes/users");
 server.use(cors());
 server.use(express.json()); // body_parser -> converts JSON data
 server.use(morgan("dev")); // logs
-// server.use(express.static(process.env.PUBLIC_DIR));
+server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 // routes
 server.use("/products", productRouter.router);
 server.use("/users", userRouter.router);
+server.use("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+});
 
 // port listeners
 server.listen(process.env.PORT, () => {
