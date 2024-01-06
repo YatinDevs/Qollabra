@@ -1,5 +1,5 @@
 .AdminPanel {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20;
@@ -35,4 +35,21 @@
 }
 .buttons button {
   margin-right: 5px;
+}
+.getProductDetails {
+  border: 2px solid black;
+  margin: 50px 10px;
+  padding: 10px 20px;
+}
+
+.updateUI {
+  display: flex;
+}
+
+.formcon {
+  margin: 5px 100px;
+  padding: 10px;
+}
+.form-container2 {
+  padding: 20px 50px;
 }

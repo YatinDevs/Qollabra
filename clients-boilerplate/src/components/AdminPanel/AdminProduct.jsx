@@ -1,5 +1,6 @@
 import React from "react";
 import "./AdminPanel.css";
+
 function AdminProduct({
   _id,
   title,
@@ -8,8 +9,7 @@ function AdminProduct({
   discountPercentage,
   rating,
   handleDelete,
-  handleUpdate,
-  handleReplace,
+  getProductsUpdated,
 }) {
   return (
     <div className="productadContainer">
@@ -24,8 +24,7 @@ function AdminProduct({
       </div>
       <div className="buttons">
         <button onClick={() => handleDelete(_id)}>Delete</button>
-        <button onClick={() => handleUpdate(_id)}>Update</button>
-        <button onClick={() => handleReplace(_id)}>Replace</button>
+        <button onClick={() => getProductsUpdated(_id)}>Update</button>
       </div>
       <p></p>
     </div>
